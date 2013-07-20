@@ -151,7 +151,7 @@ class gatewayApi_zarinpalzg extends apiCore
 		
 		$title = $this->item['package_title'];
 		
-		$gate = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', array('encoding'=>'UTF-8'));
+		$gate = new SoapClient('https://de.zarinpal.com/pg/services/WebGate/wsdl', array('encoding'=>'UTF-8'));
 		$res = $gate->PaymentRequest(
 	array(
 					'MerchantID' 	=> $merchantID ,
@@ -235,7 +235,7 @@ class gatewayApi_zarinpalzg extends apiCore
 		$st = $this->request['Status'];
 		if ($st == 'OK')
 		{
-				$gate = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
+				$gate = new nusoap_client('https://de.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
 				$res = $gate->call("PaymentVerification", array(
 					array(
 							'MerchantID'	 => $merchantID ,
