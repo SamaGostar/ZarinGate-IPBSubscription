@@ -163,8 +163,12 @@ class gatewayApi_zarinpalzg extends apiCore
 
 					)
 			);
-		
+		if($res->Status == 100)
+		{
 		return 'https://www.zarinpal.com/pg/StartPay/' . $result->Authority . '/ZarinGate';
+		}else{
+			echo'ERR: '.$res->Status;
+		}
 	}
 
 	/*-------------------------------------------------------------------------*/
@@ -262,6 +266,8 @@ class gatewayApi_zarinpalzg extends apiCore
 					);
 					
 					return $return;
+				}else{
+					echo'ERR: '.$res->Status;
 				}
 		}
 		return $this->showerror();
